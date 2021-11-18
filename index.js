@@ -19,7 +19,7 @@ app.listen(port, () => console.log(`Example app listening at http://localhost:${
 //TOKEN vào đây
 client.login(process.env.TOKEN);
 
-const Channels = ["879249660047392809"]; /// ID stage hoặc voice 
+const Channels = [process.env.ID]; /// ID stage hoặc voice 
 
 client.on("ready", async () => {
     for(const channelId of Channels){
@@ -34,7 +34,7 @@ client.on("ready", async () => {
                 guildId: channel.guild.id,
                 adapterCreator: channel.guild.voiceAdapterCreator
             });
-              const resource = createAudioResource(ytdl("https://youtu.be/DWcJFNfaw9c"), {
+              const resource = createAudioResource(ytdl(process.env.Link), {
                 inlineVolume: true
             }); //youtube link
             resource.volume.setVolume(0.2);
