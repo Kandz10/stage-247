@@ -1,2 +1,2 @@
 language = "bash"
-run = "node index.js"
+run = "npx node ."
